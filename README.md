@@ -49,6 +49,6 @@ This project provides an AI-powered recipe recommendation system
 - https://www.anthropic.com/research/building-effective-agents
 
 ### Futurework
-- Lack of observability: Our model calls must be rekiable, with the ability to maintain history across timeouts, retries, and multiple calls. Additionally, we need to manage flow control effectively while continuously iterating on aspects like prompt design and the RAG (Retrieval-Augmented Generation) approach. This requires careful orchestration, and a tool like inngest would excel here.
+- Lack of observability: Our model calls must be reliable, with the ability to maintain history across timeouts, retries, and multiple calls. Additionally, we need to manage flow control effectively while continuously iterating on aspects like prompt design and the RAG (Retrieval-Augmented Generation) approach. This requires careful orchestration, and a tool like inngest would excel here.
 - Proper logging - API logs can be made more verbose 
 - Micro services - We aplit the application into three services like frontend, API service and AI service such that each service handles its own responsibilities
