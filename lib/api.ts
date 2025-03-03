@@ -36,7 +36,7 @@ export async function getRecipes(ingredients: string, diet = ""): Promise<Recipe
     // Fetch additional details for each recipe
     console.log("getRecipes: Fetching additional details for each recipe")
     const detailedRecipes = await Promise.all(
-      data.map(async (recipe: any) => {
+      data.map(async (recipe: Recipe) => {
         const detailsResponse = await fetch(`${BASE_URL}/${recipe.id}/information?apiKey=${API_KEY}`)
         if (!detailsResponse.ok) {
           const errorText = await detailsResponse.text()
@@ -55,7 +55,7 @@ export async function getRecipes(ingredients: string, diet = ""): Promise<Recipe
           servings: details.servings,
           dishType: details.dishTypes[0] || "Main Course",
           diets: details.diets,
-          ingredients: details.extendedIngredients.map((ing: any) => ing.original),
+          ingredients: details.extendedIngredients.map((ing: { original: string }) => ing.original),
           summary: details.summary,
         }
       }),
