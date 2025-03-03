@@ -1,12 +1,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["spoonacular.com"],
+    domains: ["spoonacular.com", "img.spoonacular.com"],
   },
   experimental: {
     serverActions: true,
   },
-}
+};
 
-module.exports = nextConfig
-
+module.exports = nextConfig;
